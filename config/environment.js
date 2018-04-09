@@ -17,9 +17,29 @@ module.exports = function(environment) {
       }
     },
 
+    blog: {
+      title: "The Stone Circle",
+      description: "The Stone Circle perspective on Software Development, Business and more.",
+      logo: "/images/logo-white.png",
+      coverImage: "/images/cover-image.jpg",
+      coverMeta: {
+        attribution: "by Conor Luddy",
+        attributionLink: "https://unsplash.com/@madebyluddy"
+      },
+      twitter: "stonecircle_co",
+      navigation: [
+        { label: 'stonecircle.io', link: 'https://stonecircle.io' },
+        { label: 'Blog Home', route: 'index' },
+      ]
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    fastboot: {
+      hostWhitelist: ["localhost:4200"]
     }
   };
 
