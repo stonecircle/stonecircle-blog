@@ -24,7 +24,7 @@ module.exports = function(environment) {
       coverImage: "/images/cover-image.jpg",
       coverMeta: {
         attribution: "by Conor Luddy",
-        attributionLink: "https://unsplash.com/@madebyluddy"
+        attributionLink: "https://unsplash.com/photos/QkQXTxJ7TLg"
       },
       twitter: "stonecircle_co",
       navigation: [
