@@ -33,6 +33,18 @@ module.exports = function(environment) {
       ]
     },
 
+    analytics: {
+      integrations: [{
+        name: 'GoogleAnalytics',
+        config: {
+          id: 'UA-71683103-1',
+          set: {
+            domainName: 'blog.stonecircle.io'
+          }
+        }
+      }]
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
