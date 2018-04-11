@@ -49,6 +49,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV.blog.host = 'http://localhost:4200';
   }
 
   if (environment === 'test') {
@@ -64,7 +66,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    ENV.blog.host = 'https://blog.stonecircle.io';
 
     ENV.analytics = {
       integrations: [{
