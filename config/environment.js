@@ -21,6 +21,7 @@ module.exports = function(environment) {
       title: "The Stone Circle",
       description: "The Stone Circle perspective on Software Development, Business and more.",
       logo: "/images/logo-white.png",
+      rssLogo: '/images/logo.png',
       coverImage: "/images/cover-image.jpg",
       coverMeta: {
         attribution: "by Conor Luddy",
