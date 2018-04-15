@@ -11,7 +11,7 @@
   ],
   "buildpacks": [
     {
-      "url": "https://github.com/heroku/heroku-buildpack-ember-static.git"
+      "url": "https://github.com/stonecircle/heroku-buildpack-ember-static.git"
     }
   ]
 }
