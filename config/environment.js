@@ -34,6 +34,15 @@ module.exports = function(environment) {
       ]
     },
 
+    'ember-meta': {
+      description: 'The Stone Circle perspective on Software Development, Business and more.',
+      imgSrc: '/images/logo.png',
+      siteName: 'The Stone Circle',
+      title: 'The Stone Circle Blog',
+      twitterUsername: '@stonecircle_co',
+      url: 'https://blog.stonecircle.io/'
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
