@@ -29,7 +29,7 @@ module.exports = function(environment) {
       },
       twitter: "stonecircle_co",
       navigation: [
-        { label: 'stonecircle.io', link: 'https://stonecircle.io' },
+        { label: 'Software Consulting', link: 'https://stonecircle.io' },
         { label: 'Blog Home', route: 'index' },
       ]
     },
