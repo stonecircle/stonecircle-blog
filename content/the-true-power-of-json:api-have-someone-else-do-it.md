@@ -23,6 +23,12 @@ standard JSON:API servers in a very short amount of time.
 
 ## The Theory
 
+It's best to start off with a definition of what JSON:API is:
+
+> JSON API is a specification for how a client should request resources for fetching or modification, and how a server should respond to those requests.
+
+> JSON API is designed to minimise both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability.
+
 A lot of my understanding of the _why_ of JSON:API comes from a video of a talk given by Steve
 Klabnik at API Days Paris. I have embedded the video below because I **highly recommend** you watch
 the whole thing to understand why this is such an important topic.
