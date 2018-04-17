@@ -29,9 +29,18 @@ module.exports = function(environment) {
       },
       twitter: "stonecircle_co",
       navigation: [
-        { label: 'stonecircle.io', link: 'https://stonecircle.io' },
+        { label: 'Software Consulting', link: 'https://stonecircle.io' },
         { label: 'Blog Home', route: 'index' },
       ]
+    },
+
+    'ember-meta': {
+      description: 'The Stone Circle perspective on Software Development, Business and more.',
+      imgSrc: '/images/logo.png',
+      siteName: 'The Stone Circle',
+      title: 'The Stone Circle Blog',
+      twitterUsername: '@stonecircle_co',
+      url: 'https://blog.stonecircle.io/'
     },
 
     APP: {

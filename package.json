@@ -12,6 +12,7 @@
   "repository": "",
   "scripts": {
     "build": "ember build",
+    "build-production": "ember build -e production",
     "lint:js": "eslint ./*.js app config lib server tests",
     "start": "ember serve",
     "test": "ember test"
@@ -19,7 +20,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
-    "ember-casper-template": "^1.7.0",
+    "ember-casper-template": "^1.8.0",
     "ember-cli": "~3.0.2",
     "ember-cli-analytics": "^1.2.0",
     "ember-cli-app-version": "^3.0.0",
