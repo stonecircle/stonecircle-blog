@@ -20,7 +20,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
-    "ember-casper-template": "^1.8.0",
+    "ember-casper-template": "github:stonecircle/ember-casper-template#feature/ember-meta-post",
     "ember-cli": "~3.0.2",
     "ember-cli-analytics": "^1.2.0",
     "ember-cli-app-version": "^3.0.0",
