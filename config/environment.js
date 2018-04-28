@@ -49,7 +49,9 @@ module.exports = function(environment) {
         environments: ['production'],
         config: {
           id: 'UA-71683103-1',
-          hostname: 'blog.stonecircle.io',
+          set: {
+            hostname: 'blog.stonecircle.io',
+          }
         }
       },
     ],
