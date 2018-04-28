@@ -43,6 +43,17 @@ module.exports = function(environment) {
       url: 'https://blog.stonecircle.io/'
     },
 
+    metricsAdapters: [
+      {
+        name: 'GoogleAnalytics',
+        environments: ['production'],
+        config: {
+          id: 'UA-71683103-1',
+          hostname: 'blog.stonecircle.io',
+        }
+      },
+    ],
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -76,18 +87,6 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.blog.host = 'https://blog.stonecircle.io';
-
-    ENV.analytics = {
-      integrations: [{
-        name: 'GoogleAnalytics',
-        config: {
-          id: 'UA-71683103-1',
-          set: {
-            hostname: 'blog.stonecircle.io'
-          }
-        }
-      }]
-    };
   }
 
   return ENV;

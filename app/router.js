@@ -1,10 +1,31 @@
 import EmberRouter from '@ember/routing/router';
-import Trackable from 'ember-cli-analytics/mixins/trackable';
 import config from './config/environment';
+import { get } from '@ember/object';
+import { inject as service } from '@ember/service';
+import { scheduleOnce } from '@ember/runloop';
 
-const Router = EmberRouter.extend(Trackable, {
+const Router = EmberRouter.extend({
   location: config.locationType,
-  rootURL: config.rootURL
+  metrics: service(),
+  fastboot: service(),
+
+  didTransition() {
+    this._super(...arguments);
+    this._trackPage();
+  },
+
+  _trackPage() {
+    if(get(this, 'fastboot.isFastBoot')) {
+      return
+    }
+
+    scheduleOnce('afterRender', this, () => {
+      const page = this.get('url');
+      const title = this.getWithDefault('currentRouteName', 'unknown');
+
+      get(this, 'metrics').trackPage({ page, title });
+    });
+  }
 });
 
 Router.map(function() {
