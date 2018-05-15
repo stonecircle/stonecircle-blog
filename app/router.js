@@ -22,8 +22,9 @@ const Router = EmberRouter.extend({
     scheduleOnce('afterRender', this, () => {
       const page = this.get('url');
       const title = this.getWithDefault('currentRouteName', 'unknown');
+      const hostname = 'blog.stonecircle.io'
 
-      get(this, 'metrics').trackPage({ page, title });
+      get(this, 'metrics').trackPage({ page, title, hostname });
     });
   }
 });
