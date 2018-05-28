@@ -11,8 +11,8 @@ author: chris
 date: Mon May 28 2018 16:53:21 GMT+0100 (IST)
 tags:
   - guides-app
-  - new
   - ember
+  - new
 ---
 
 A lot of the time in the Ember community we see a joke about the Right Way™️ to build something. At Stone Circle we happen to believe that there is a right way to do something, even if we can never achieve it.
