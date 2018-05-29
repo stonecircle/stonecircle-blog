@@ -1,9 +1,9 @@
 ---
 title: The "Right Way" to Build the Ember Guides
-image:
+image: /images/giammarco-boscaro-380903-unsplash.jpg
 imageMeta:
-  attribution:
-  attributionLink:
+  attribution: by Giammarco Boscaro
+  attributionLink: https://unsplash.com/photos/OPzWvgL-upY
 featured: true
 meta_title: null
 meta_description: null
