@@ -24,22 +24,22 @@ In the very early stages of the conversations about upgrading the Ember Guides t
 
 > translate a directory (or set of directories) of Markdown documents into a static JSONAPI
 
-Having worked extensively with Broccoli many years ago (before ember-cli was the official build system for Ember) I thought to myself "what's the worse that could happen" and jumped straight into the code. The thing about Broccoli is that it's almost the opposite of "riding a bike" and you very quickly forget everything about it if you haven't been using it for a while 😣
+Having worked extensively with Broccoli many years ago (before ember-cli was the official build system for Ember), I thought to myself "what's the worse that could happen" and jumped straight into the code. The thing about Broccoli is that it's almost the opposite of "riding a bike" and you very quickly forget everything about it if you haven't been using it for a while 😣
 
 ## Why Broccoli or JSON:API
 Anyone who has been following Ember for any reasonable amount of time knows that Ember Data likes to speak JSON:API natively. If you have ever needed to translate your API's endpoints to speak natively with Ember Data you know that it is essentially a process of translating things into JSON:API before it goes into Ember Data. If you're using JSON:API upfront things are a lot easier to deal with, and you get to make use of the simplicity of Ember Data.
 
-Broccoli is an `asset pipeline` that deals very effectively with the file system. It is all Just Javascript™️ so it is in theory quite easy to work with. One of the issues that makes Broccoli more difficult to work with is the lack of documentation, or at least that used to be the case. Over the last few months [Oli Griffiths](http://www.oligriffiths.com/) has been very active in the Broccoli community and has recently published a [Broccoli Tutorial](https://github.com/oligriffiths/broccolijs-tutorial). There is also a lot of work going on behind the scenes to make Broccoli more straight-forward to work with and a much more powerful tool.
+Broccoli is an `asset pipeline` that deals very effectively with the file system. It is all Just Javascript™️, so it is in theory quite easy to work with. One of the issues that makes Broccoli more challenging to work with is the lack of documentation, or at least that used to be the case. Over the last few months [Oli Griffiths](http://www.oligriffiths.com/) has been very active in the Broccoli community and has recently published a [Broccoli Tutorial](https://github.com/oligriffiths/broccolijs-tutorial). There is also much work going on behind the scenes to make Broccoli more straight-forward to work with and a much more powerful tool.
 
-Having made these original decisions we ultimately decided to build something called [broccoli-static-site-json](https://github.com/stonecircle/broccoli-static-site-json) which as you can see has very similar goals to broccoli-blog-api:
+Having made these original decisions, we ultimately decided to build something called [broccoli-static-site-json](https://github.com/stonecircle/broccoli-static-site-json) which as you can see has very similar goals to broccoli-blog-api:
 
 > Simple Broccoli plugin that parses collections of markdown files and exposes them as JSON:API documents in the output tree, under the specified paths. It also supports the use of front-matter to define meta-data for each markdown file.
 
-Since the early days of broccoli-static-site-json things have gotten a tiny bit more complicated (more flexibility usually means more complexity) but to really understand the basics of how effective Broccoli has been for this use case we can go back and look at the files at the very fist commit on the 7 Nov 2017. We are going to go into more detail below but if you want to follow along you can the the main index file [here](https://github.com/stonecircle/broccoli-static-site-json/blob/95cfe954e48da203eacba5fa154333cbc0b3a81d/index.js).
+Since the early days of broccoli-static-site-json things have gotten a tiny bit more complicated (more flexibility usually means more complexity) but to understand the basics of how effective Broccoli has been for this use case we can go back and look at the files at the very first commit on the 7 Nov 2017. We are going to go into more detail below but if you want to follow along you can find the main index file [here](https://github.com/stonecircle/broccoli-static-site-json/blob/95cfe954e48da203eacba5fa154333cbc0b3a81d/index.js).
 
 ## The main plugin
 
-The simple early experiment of the broccoli-static-site-json had an index.js file (the only active file at the time) with a total of 119 lines of code, the main active lines making up the `build()` of the Broccoli plugin just adding up to 50 lines of code, which is definitely small enough for us to deep dive into in this post 💪
+The simple early experiment of the broccoli-static-site-json had an index.js file (the only active file at the time) with a total of 119 lines of code, the main active lines making up the `build()` of the Broccoli plugin just adding up to 50 lines of code, which is definitely small enough for us to deep dive into in this post. 💪
 
 I'm going to give a very brief overview of the structure of a Broccoli plugin and then go into detail of each line of the main `build()` function.
 
@@ -80,7 +80,7 @@ const jsonTree = new StaticSiteJson('input', {
 
 This is just setting the local `folder` and the `contentFolder` in the options hash for the StaticSiteJson class and will eventually be how we tell the plugin to look for Markdown files in the `input` folder and put the output JSON:API files in `output-jsons`. The contentFolder is optional and will default to `content`.
 
-When this is actually used in ember-cli or any other Broccoli pipeline the `build()` function is called. This is where most of the work happens.
+When this is used in ember-cli or any other Broccoli pipeline the `build()` function is called. This is where most of the work happens.
 
 ### The build() function
 
@@ -126,7 +126,7 @@ build() {
 }
 ```
 
-This may seem a bit scary but don't worry we will break it down and hopefully it will all become clear.
+This may seem a bit scary but don't worry we will break it down, and hopefully it will all become clear.
 
 #### Creating the output folder
 
@@ -139,7 +139,7 @@ if (!existsSync(join(this.outputPath, this.options.contentFolder))) {
 }
 ```
 
-one thing that you will notice right off the bat is that we are using functions like `exitsSync()`, `mkdirSync()` and `join()` which are all native NodeJS functions. You can see where they are coming from if you look at the top of the index.js file to see the require statements:
+One thing that you will notice right off the bat is that we are using functions like `exitsSync()`, `mkdirSync()` and `join()` which are all native NodeJS functions. You can see where they are coming from if you look at the top of the index.js file to see the require statements:
 
 ```js
 const { extname, join, dirname } = require('path');
@@ -155,7 +155,7 @@ you can read more about these functions on the official NodeJS documentation for
 
 #### Creating the Table of Contents from the pages file
 
-Before I started building broccoli-static-site-json [Ricardo Mendes a.k.a. locks](https://github.com/locks) and [Jared Galanis](https://github.com/jaredgalanis) had began the process of building the Markdown sources directories that would allow us to more effectively manage different versions of the Ember Guides. One of the key aspects of this structure was that it included a [`pages.yml`](https://github.com/ember-learn/guides-source/blob/master/guides/v2.15.0/pages.yml) file that specified the Table of Contents (ToC) for any particular version of the Guides. What we needed to do as part of this process was to parse this YAML file and output a JSON:API based file in the output directory. Here is the code for that:
+Before I started building broccoli-static-site-json [Ricardo Mendes a.k.a. @locks](https://github.com/locks) and [Jared Galanis](https://github.com/jaredgalanis) had begun the process of building the Markdown sources directories that would allow us to manage different versions of the Ember Guides more effectively. One of the key aspects of this structure was that it included a [`pages.yml`](https://github.com/ember-learn/guides-source/blob/master/guides/v2.15.0/pages.yml) file that specified the Table of Contents (ToC) for any particular version of the Guides. What we needed to do as part of this process was to parse this YAML file and output a JSON:API based file in the output directory. Here is the code for that:
 
 ```js
 // build pages file
@@ -166,7 +166,7 @@ if (existsSync(join(this.options.folder, 'pages.yml'))) {
 }
 ```
 
-this snippet first checks to see if the input folder contains a `pages.yml` file and if it does it loads it using [js-yaml](https://www.npmjs.com/package/js-yaml). After it loads the data it writes a _serialized_ version of the file to the output folder, the serialisation is done using [jsonapi-serializer](https://github.com/SeyZ/jsonapi-serializer) with the following serializer definiation:
+This snippet first checks to see if the input folder contains a `pages.yml` file and if it does it loads it using [js-yaml](https://www.npmjs.com/package/js-yaml). After it loads the data it writes a _serialized_ version of the file to the output folder, and the serialisation is done using [jsonapi-serializer](https://github.com/SeyZ/jsonapi-serializer) with the following serializer definition:
 
 ```js
 const TableOfContentsSerializer = new Serializer('page', {
@@ -180,7 +180,7 @@ const TableOfContentsSerializer = new Serializer('page', {
 ```
 
 #### Building the tree of Markdown files
-Next up is the main event, converting a nested structure of markdown files into a nested structure of JSON:API documents. This one will be simpler to follow if we take it in bite sized chunks, let's start with just getting the Markdown files:
+Next up is the main event, converting a nested structure of markdown files into a nested structure of JSON:API documents. This one will be simpler to follow if we take it in bite-sized chunks, let's start with just getting the Markdown files:
 
 ```js
 const paths = walkSync(this.inputPaths);
@@ -188,7 +188,7 @@ const paths = walkSync(this.inputPaths);
 const mdFiles = paths.filter(path => extname(path) === '.md');
 ```
 
-This code uses [`walkSync`](https://github.com/joliss/node-walk-sync) to list all of the files under the inputPaths (what we passed in as the `folder` in the constructor) and then we filter that list of paths to find all files that end with `.md` so that we can find markdown files.
+This code uses [`walkSync`](https://github.com/joliss/node-walk-sync) to list all of the files under the inputPaths (what we passed in as the `folder` in the constructor), and then we filter that list of paths to find all files that end with `.md` so that we can find markdown files.
 
 Next it's time to load each of those files into an array:
 
@@ -202,7 +202,7 @@ const fileData = mdFiles.map(path => ({
 }));
 ```
 
-using [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) twice to convert a list of file _names_ into a data structure that contains everything that we need. The first map just converts the file names into an array of objects that looks something like this:
+Using [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) twice to convert a list of file _names_ into a data structure that contains everything that we need. The first map converts the file names into an array of objects that looks something like this:
 
 ```js
 [{
@@ -220,7 +220,7 @@ using [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 }]
 ```
 
-as you can see each object remembers the path to the file that created and has the **full content** of the file loaded. In the second `map()` function we the use [`yaml-front-matter`](https://www.npmjs.com/package/yaml-front-matter) to load the optional extra YAML meta data into the object. You can read more about what front-matter is and what it can be used for [here](https://jekyllrb.com/docs/frontmatter/).
+As you can see each object remembers the path to the file that created and has the **full content** of the file loaded. In the second `map()` function we the use [`yaml-front-matter`](https://www.npmjs.com/package/yaml-front-matter) to load the optional extra YAML metadata into the object. You can read more about what front-matter is and what it can be used for [here](https://jekyllrb.com/docs/frontmatter/).
 
 After the second `map()` function the `fileData` array looks like this:
 
@@ -236,7 +236,7 @@ After the second `map()` function the `fileData` array looks like this:
 }]
 ```
 
-which is finally ready to serialise into JSON:API. Next we need to loop over the `fileData` array and write our JSON files out to disk:
+This leaves us finally ready to serialise into JSON:API. Next we need to loop over the `fileData` array and write our JSON files out to disk:
 
 ```js
 fileData.forEach((file) => {
@@ -276,6 +276,6 @@ const ContentSerializer = new Serializer('content', {
 in this case we use `keyForAttribute()` to rename `__content` to just be `content`.
 
 ## Conclusion
-I hope you enjoyed this deep-dive into the guts of broccoli-static-site-json. If you are interested in other places that makes use of this system you can check out [Ember Casper Template](https://github.com/stonecircle/ember-casper-template) which also happens to be what is powering this Blog 🎉
+I hope you enjoyed this deep-dive into the guts of broccoli-static-site-json. If you are interested in other places that make use of this system you can check out [Ember Casper Template](https://github.com/stonecircle/ember-casper-template) which also happens to be what is powering this Blog 🎉
 
-As always you can reach out to me on [Twitter](https://twitter.com/real_ate) or you can find me on the Ember Community Slack as `@real_ate`
+As always you can reach out to me on [Twitter](https://twitter.com/real_ate), or you can find me on the Ember Community Slack as `@real_ate`
