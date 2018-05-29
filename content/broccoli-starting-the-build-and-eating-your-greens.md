@@ -16,7 +16,7 @@ tags:
   - new
 ---
 
-This is the second part of a 6 part series on how we rebuilt the new Ember Guides from the ground up over the source of six months, converting it into an Ember app in the process. If you want to see the first part in this series check it out [here](/the-right-way-to-build-the-ember-guides/) and you can keep track of the posts by following the RSS feed at the top of the page.
+This is the second part of a 6 part series on how we rebuilt the new Ember Guides from the ground up over the cource of six months, converting it into an Ember app in the process. If you want to see the first part in this series check it out [here](/the-right-way-to-build-the-ember-guides/) and you can keep track of the posts by following the RSS feed at the top of the page.
 
 ## Initial experiments
 
