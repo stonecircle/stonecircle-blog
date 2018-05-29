@@ -1,9 +1,9 @@
 ---
 title: Broccoli - Starting the Build and Eating Your Greens
-image:
+image: /images/remi-muller-326005-unsplash.jpg
 imageMeta:
-  attribution:
-  attributionLink:
+  attribution: by Rémi Müller
+  attributionLink: https://unsplash.com/photos/LlHgaeBwYVE
 featured: true
 meta_title: null
 meta_description: null
