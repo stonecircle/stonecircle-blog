@@ -36,12 +36,13 @@ the code. The thing about Broccoli is that it's almost the opposite of "riding a
 quickly forget everything about it if you haven't been using it for a while 😣
 
 ## Why Broccoli or JSON:API
-Anyone who has been following Ember for any reasonable amount of time knows that Ember Data likes to
-speak JSON:API natively, and if your backend already speaks JSON:API and follows the spec you are
-essentially ready to go! If you have ever needed to translate a hand-rolled, bespoke API's endpoints
-to speak with Ember Data you know that it is essentially just a process of translating things into
-JSON:API in Javascript before it goes into Ember Data. If you're using JSON:API upfront things are a
-lot easier to deal with, and you get to make use of the simplicity of Ember Data.
+
+Anyone who has been following Ember for any reasonable amount of time knows that Ember Data works
+great with JSONAPI, and if your backend already speaks JSON:API and follows the spec you are
+essentially ready to go! If you have ever needed to integrate a hand-rolled, bespoke API's endpoints
+with Ember Data you know that it is essentially just a process of translating things into JSON:API
+in Javascript before it goes into Ember Data. If you're using JSON:API upfront things are a lot
+easier to deal with, and you get to make use of the simplicity of Ember Data.
 
 Broccoli is an `asset pipeline` that deals very effectively with the file system. It is all Just
 Javascript™️, so it is in theory quite easy to work with. One of the issues that makes Broccoli more
@@ -52,7 +53,8 @@ Tutorial](https://github.com/oligriffiths/broccolijs-tutorial). There is also mu
 behind the scenes to make Broccoli more straight-forward to work with and a much more powerful tool,
 for example Oli is currently [working on an
 experiment](https://github.com/ember-cli/ember-cli/pull/7798) to bring Broccoli 1.x support to
-ember-cli which will (hopefully) make life much better for Windows developers.
+ember-cli which will (hopefully) make life much better for Windows developers. [Jen Weber](https://github.com/jenweber) is also working on updating the [ember-cli documentation](https://ember-cli.com/user-guide/) so
+it should soon be a bit easier to know how to get started adding to ember-cli with Broccoli 🎉
 
 Having made these original decisions, we ultimately decided to build something called [broccoli-static-site-json](https://github.com/stonecircle/broccoli-static-site-json) which as you can see has very similar goals to broccoli-blog-api:
 
