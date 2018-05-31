@@ -11,7 +11,6 @@ author: chris
 date: Tue Apr 10 2018 10:03:26 GMT+0100 (IST)
 tags:
   - business
-  - new
 ---
 
 [Stone Circle](https://stonecircle.io) has been a thing for over two years now, and we figured it was about time
