@@ -8,7 +8,7 @@ featured: true
 meta_title: null
 meta_description: null
 author: chris
-date: Mon May 28 2018 21:16:32 GMT+0100 (IST)
+date: Mon Jun 01 2018 08:00:00 GMT+0100 (IST)
 tags:
   - guides-app
   - ember
