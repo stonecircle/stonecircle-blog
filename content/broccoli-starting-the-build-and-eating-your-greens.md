@@ -7,6 +7,7 @@ imageMeta:
 featured: true
 meta_title: null
 meta_description: null
+canonical: https://emberjs.com/blog/2018/06/01/the-emberjs-times-issue-49.html
 author: chris
 date: Mon Jun 01 2018 08:00:00 GMT+0100 (IST)
 tags:
