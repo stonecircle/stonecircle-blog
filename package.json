@@ -39,7 +39,7 @@
     "ember-cli-uglify": "^2.0.0",
     "ember-data": "~3.1.0",
     "ember-export-application-global": "^2.0.0",
-    "ember-ghost": "^1.0.0",
+    "ember-ghost": "^1.0.1",
     "ember-ghost-attila-template": "^1.0.1",
     "ember-load-initializers": "^1.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
