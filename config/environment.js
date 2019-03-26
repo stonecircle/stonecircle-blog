@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -63,6 +64,16 @@ module.exports = function(environment) {
 
     fastboot: {
       hostWhitelist: ["localhost:4200", "localhost:7784"]
+    },
+
+    'responsive-image': {
+      sourceDir: 'images',
+      destinationDir: 'responsive-images',
+      quality: 80,
+      supportedWidths: [2000, 1000, 600, 300],
+      removeSourceDir: false,
+      justCopy: false,
+      extensions: ['jpg', 'jpeg', 'png', 'gif']
     }
   };
 
