@@ -33,7 +33,7 @@ module.exports = function(environment) {
         { label: 'Software Consulting', link: 'https://stonecircle.io' },
         { label: 'Blog Home', route: 'index' },
       ],
-      domain: 'https://blog.stonecircle.io',
+      host: 'https://blog.stonecircle.io',
     },
 
     metricsAdapters: [
