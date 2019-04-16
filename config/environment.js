@@ -32,16 +32,8 @@ module.exports = function(environment) {
       navigation: [
         { label: 'Software Consulting', link: 'https://stonecircle.io' },
         { label: 'Blog Home', route: 'index' },
-      ]
-    },
-
-    'ember-meta': {
-      description: 'The Stone Circle perspective on Software Development, Business and more.',
-      imgSrc: '/images/logo.png',
-      siteName: 'The Stone Circle',
-      title: 'The Stone Circle Blog',
-      twitterUsername: '@stonecircle_co',
-      url: 'https://blog.stonecircle.io/'
+      ],
+      domain: 'https://blog.stonecircle.io',
     },
 
     metricsAdapters: [
@@ -96,10 +88,6 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
-  }
-
-  if (environment === 'production') {
-    ENV.blog.host = 'https://blog.stonecircle.io';
   }
 
   return ENV;
