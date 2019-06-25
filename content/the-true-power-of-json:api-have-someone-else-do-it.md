@@ -7,11 +7,12 @@ imageMeta:
 featured: true
 meta_title: null
 meta_description: null
+canonical: https://chris.manson.ie/the-true-power-of-json:api-have-someone-else-do-it/
 author: chris
 date: Thu Apr 15 2018 17:05:18 GMT+0100 (IST)
 tags:
   - software
-  - JSON:API
+  - JSONAPI
   - authmaker
   - new
 ---
